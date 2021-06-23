@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Dictionary - {{word}}</title>
+{% load static %}
+<link rel="stylesheet" href={% static "englishdictionary/styles.css" %}>
+</head>
+<body>
+<div class="wrap">
+  <div class="left-part">
+   <img src="{% static 'englishdictionary/vector.svg' %}" alt="search image" srcset="">
+   <h1>Django Dictionary</h1>
+   </div>
+   <div class="search">
+     <form action="word">
+      <input type="text" name="search" class="searchTerm" placeholder="Input Your Word Here">
+      <button type="submit" class="searchButton">Search
+        <i class="fa fa-search"></i>
+     </button>
+    </form>
+    <h3>Word Searched : {{word}}</h3>
+   <h3>Meanings: <ul>
+    {% if noun_meaning %}<li>(noun) {{noun_meaning}} {% endif %} </li>
+{% if verb_meaning %}<li>(verb) {{verb_meaning}} {% endif %} </li>
+   </ul></h3>
+   
+   <h3>Synonyms: {% for synonym in synonyms %}
+       {{synonym}},
+       {% endfor %}</h3>
+   
+   
+   <h3>Antonyms: {% for antonym in antonyms %}
+       {{antonym}},
+       {% endfor %}</h3>
+   
+   </div>
+</div>
+</body>
+</html>

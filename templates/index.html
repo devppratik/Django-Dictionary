@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% load static %}
+<link rel="stylesheet" href={% static "englishdictionary/styles.css" %}>
+<title>Django Dictionary</title>
+</head>
+<body>
+   
+   
+<div class="wrap">
+  <div class="left-part">
+   <img src="{% static 'englishdictionary/vector.svg' %}" alt="search image" srcset="">
+   <h1>Django Dictionary </h1>
+   </div>
+   <div class="search">
+     <form action="word">
+      <input type="text" name="search" class="searchTerm" placeholder="Input Your Word Here">
+      <button type="submit" class="searchButton">Search
+        <i class="fa fa-search"></i>
+     </button>
+    </form>
+   </div>
+</div>
+</body>
+</html>
